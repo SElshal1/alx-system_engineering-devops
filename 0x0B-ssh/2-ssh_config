@@ -1,4 +1,4 @@
- Include /etc/ssh/ssh_config.d/*.conf
+Include /etc/ssh/ssh_config.d/*.conf
 
 Host *
 #   ForwardAgent no
@@ -16,7 +16,6 @@ Host *
 #   ConnectTimeout 0
 #   StrictHostKeyChecking ask
     IdentityFile ~/.ssh/school
-#   IdentityFile ~/.ssh/id_rsa
 #   IdentityFile ~/.ssh/id_dsa
 #   IdentityFile ~/.ssh/id_ecdsa
 #   IdentityFile ~/.ssh/id_ed25519
@@ -33,4 +32,4 @@ Host *
     SendEnv LANG LC_*
     HashKnownHosts yes
     GSSAPIAuthentication yes
-                                                                                                
+~                                     
