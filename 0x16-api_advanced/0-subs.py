@@ -1,15 +1,19 @@
 #!/usr/bin/python3
-""" Get how many subscribers """
+''' task 1 module'''
+
 import requests
+import sys
 
 
-def number_of_subscribers(subreddit):
-    """ get how many subscribers """
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    response = requests.get(url, headers={})
+def top_ten(subreddit):
+    '''gets 10 hottest posts of a subreddit'''
+    headers = {'User-agent': 'test23'}
+    url = 'https://www.reddit.com/r/'
+    posts = requests.get(url + '{}/hot.json?limit=10'.format(
+        sys.argv[1]), allow_redirects=False, headers=headers)
 
-    if response.status_code == 200:
-        data = response.json()
-        return data['data']['subscribers']
+    if posts.status_code == 200:
+        for post in posts.json()['data']['children']:
+            print(post['data']['title'])
     else:
-        return 0
+        print(None)
