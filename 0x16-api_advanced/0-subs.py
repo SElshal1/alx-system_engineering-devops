@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-''' task 1 module'''
+"""
+Script that queries subscribers on a given Reddit subreddit.
+"""
 
 import requests
-import sys
 
 
-def top_ten(subreddit):
-    '''gets 10 hottest posts of a subreddit'''
-    headers = {'User-agent': 'test23'}
-    url = 'https://www.reddit.com/r/'
-    posts = requests.get(url + '{}/hot.json?limit=10'.format(
-        sys.argv[1]), allow_redirects=False, headers=headers)
-
-    if posts.status_code == 200:
-        for post in posts.json()['data']['children']:
-            print(post['data']['title'])
+def number_of_subscribers(subreddit):
+    """Return the total number of subscribers on a given subreddit."""
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {"User-Agent": "Mozilla/5.0"}
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    if response.status_code == 200:
+        data = response.json()
+        subscribers = data['data']['subscribers']
+        return subscribers
     else:
-        print(None)
+        return 0
