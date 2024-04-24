@@ -1,18 +1,14 @@
+
 #!/usr/bin/python3
-# get subs
-from requests import get
-from sys import argv
+"""
+100-main
+"""
+import sys
 
-
-def number_of_subscribers(subreddit):
-    """subs"""
-    head = {'User-Agent': 'Dan Kazam'}
-    count = get('https://www.reddit.com/r/{}/about.json'.format(
-        subreddit), headers=head).json()
-    try:
-        return count.get('data').get('subscribers')
-    except:
-        return 0
-
-if __name__ == "__main__":
-    number_of_subscribers(argv[1])
+if __name__ == '__main__':
+    count_words = __import__('100-count').count_words
+    if len(sys.argv) < 3:
+        print("Usage: {} <subreddit> <list of keywords>".format(sys.argv[0]))
+        print("Ex: {} programming 'python java javascript'".format(sys.argv[0]))
+    else:
+        result = count_words(sys.argv[1], [x for x in sys.argv[2].split()])
