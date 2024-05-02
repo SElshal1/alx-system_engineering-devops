@@ -1,0 +1,28 @@
+Time: Power outage from 10 to 11:30 AM (UTC).
+
+Impact: Basically, the negative impact was seen on the organization's web page which was turned on and off during that period. The percentage of users affected by this outage amounted to approximately 30%, which caused customer dissatisfaction and possibly decreased profits.
+
+Root of the problem: A wrong setting in the load balancer configurations was responsible for the crash because it caused user requests to be misdirected to the appropriate servers. Here's what happened:
+
+10:00 AM: I realized something was wrong after our monitoring systems started sending alerts about high response time and error numbers on our site.
+10:05 AM: I investigated what could be causing such anomalies, thinking it might be due to a possible overload on one of our servers or congestion along one of the networks.
+10:20 AM: I was going down the wrong path with investigations that focused on how well resources were being used on the server and analyzing traffic across our network.
+10:45 AM: With no resolution in sight, this issue has been passed as an incident to our infrastructure team who can perform a more detailed analysis.
+11:00 AM: Investigation revealed that the load balancer was incorrectly configured thus sending traffic unevenly to the backend servers.
+11:30 AM: After fixing the misconfiguration, traffic distribution returned to normal and the issue was resolved.
+Root cause and solution:
+
+    This unfortunate incident is caused by misconfiguration of the load balancer settings. The load balancer fails in its primary task of dividing incoming requests evenly between server channels; A technical error overloaded certain servers and thus caused irregular downtime.
+The situation has been resolved. What we did was to correct the load balancer setting so that incoming traffic is evenly distributed across all the back-end servers - this way, we are sure that no server is overloaded. In addition, monitoring alerts are fine-tuned: no further situation will be detected in the future.
+
+Actions taken to address and avoid recurrence:
+Corrective and preventive steps:
+One important initiative to implement from now on is to perform regular audits on load balancer configurations. The purpose of this is to ensure that traffic is routed as desired, ensuring that each server plays its own role without being overloaded.
+
+Review monitoring mechanisms to provide more detailed feedback on traffic flow allocation and operational efficiency of servers.
+
+Procedures to address the problem:
+1- I conducted a comprehensive evaluation of the load balancer settings in order to detect any remaining imbalances and take corrective actions.
+2- Plan periodic evaluations of load balancer configurations that act as preventive measures against redundancy.
+3- Improving the approach used in responding to such events, which aims to make the process of addressing and resolving similar future situations more effective.
+By implementing these corrective actions, my primary goal is not only to prevent the possibility of such incidents occurring again in the future, but also to increase strength on the stability and reliability fronts of our systems.
